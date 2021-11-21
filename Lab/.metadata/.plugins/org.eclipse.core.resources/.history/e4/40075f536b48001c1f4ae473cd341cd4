@@ -1,0 +1,28 @@
+package khaiThacLuatKetHop;
+
+import weka.associations.FPGrowth;
+import weka.core.Utils;
+
+public class FpGrowthModel extends PreProcessing {
+	FPGrowth fp;
+	public FpGrowthModel() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public FpGrowthModel(String fileName) throws Exception{
+		super.dataSet = super.load_data(fileName);
+		fp = new FPGrowth();
+	}
+	
+	public void mineRule(String modelOpt) throws Exception{
+		super.modelOption = Utils.splitOptions(modelOpt);
+		fp.setOptions(modelOption);
+		fp.buildAssociations(dataSet);
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return fp.toString();
+	}
+}

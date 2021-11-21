@@ -1,0 +1,5 @@
+package clusteringModel;
+
+public class KmeanModel {
+
+}

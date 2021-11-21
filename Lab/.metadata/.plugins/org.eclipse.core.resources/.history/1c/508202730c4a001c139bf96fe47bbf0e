@@ -1,0 +1,18 @@
+package clusteringModel;
+
+import weka.clusterers.SimpleKMeans;
+import weka.core.Instances;
+import weka.core.Utils;
+
+public class KmeanModel extends PreProcessing {
+	SimpleKMeans kmeans;
+	String[] model_option;
+	
+	public void buildKmeanModel(Instances data, String model_opt) throws Exception{
+		this.model_option = Utils.splitOptions(model_opt);
+		kmeans = new SimpleKMeans();
+		kmeans.setOptions(model_option);
+		kmeans.setNumClusters(2);
+		kmeans.setDistanceFunction(new FunclideanDistance());
+	}
+}
