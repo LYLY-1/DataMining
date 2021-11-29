@@ -44,7 +44,7 @@ public class KnnModel extends PreProcessing {
             instance.setClassValue(predict);
         }
         BufferedWriter output = new BufferedWriter( new FileWriter(fileName));
-        output.write(knn.toString());
+        output.write(data.toString());
         output.flush();
         output.close();
 	}

@@ -38,7 +38,7 @@ public class J48Model extends PreProcessing {
             instance.setClassValue(predict);
         }
         BufferedWriter output = new BufferedWriter(new FileWriter(fileName));
-        output.write(j48.toString());
+        output.write(data.toString());
         output.flush();
         output.close();
 	}

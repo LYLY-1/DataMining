@@ -8,16 +8,16 @@ public class MainTest {
 //		 TODO Auto-generated method stub
 		System.out.println("Bài 1: NaiveBayes:\n");
 		NBayesModel nb = new NBayesModel();
-		Instances train_data = nb.load_data("D:\\Learning\\DataMinning\\data\\mushroom_train.arff");
+		Instances train_data = nb.load_data("D:\\HK1-Nam3\\DataMinning\\data\\mushroom_train.arff");
 		nb.buildNaiveBayesModel(train_data);
 		System.out.println(nb.outputModel());
 		
-		Instances test_data = nb.load_data("D:\\Learning\\DataMinning\\data\\mushroom_test.arff");
+		Instances test_data = nb.load_data("D:\\HK1-Nam3\\DataMinning\\data\\mushroom_test.arff");
 		nb.evaluationNaiveBayesModel(test_data);
 		System.out.println(nb.outputEvaluation());
 		
-		Instances predict = nb.load_data("D:\\Learning\\DataMinning\\data\\mushroom_predict.arff");
-		nb.predictClass(predict, "D:\\Learning\\DataMinning\\data\\mushroomReplaceMissing_predict.arff");
+		Instances predict = nb.load_data("D:\\HK1-Nam3\\DataMinning\\data\\mushroom_predict.arff");
+		nb.predictClass(predict, "D:\\HK1-Nam3\\DataMinning\\data\\mushroomReplaceMissing_predict.arff");
 		
 		
 		System.out.println("**********************************************\n");
@@ -48,11 +48,11 @@ public class MainTest {
 		System.out.println("\n**********************************************\n");
 		System.out.println("\nBài 3: KNN\n");
 		KnnModel knn = new KnnModel();
-		Instances train_knn = knn.load_data("D:\\Learning\\DataMinning\\data\\mushroom_train.arff");
+		Instances train_knn = knn.load_data("D:\\HK1-Nam3\\DataMinning\\data\\mushroom_train.arff");
 		knn.buildKnnModel(train_knn);
 		System.out.println(knn.outputModel());
 		
-		Instances test_knn = knn.load_data("D:\\Learning\\DataMinning\\data\\mushroom_test.arff");
+		Instances test_knn = knn.load_data("D:\\HK1-Nam3\\DataMinning\\data\\mushroom_test.arff");
 		knn.evaluationKnnModelTest(test_knn, 5);
 		System.out.println("\nĐánh giá mô hình với testset\n");
 		System.out.println(knn.outputEvalModelTest());
@@ -61,8 +61,8 @@ public class MainTest {
 		System.out.println("\nĐánh giá mô hình với cross vaidation:\n");
 		System.out.println(knn.outputEvalModelCross());
 		
-		Instances predict_knn = knn.load_data("D:\\Learning\\DataMinning\\data\\mushroom_predict.arff");
-		knn.predictKNN(predict_knn, "D:\\Learning\\DataMinning\\data\\mushroom_predictKNN.arff");
+		Instances predict_knn = knn.load_data("D:\\HK1-Nam3\\DataMinning\\data\\mushroom_predict.arff");
+		knn.predictKNN(predict_knn, "D:\\HK1-Nam3\\DataMinning\\data\\mushroom_predictKNN.arff");
 		
 	}
 
